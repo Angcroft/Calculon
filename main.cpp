@@ -1,66 +1,84 @@
 #include <iostream>
 #include <cmath>
+#include <limits>
 
 using namespace std;
 
-//  Function for showing results
+// Result
 void showResults(double result) {
     cout << "The result is: " << result << endl;
 }
 
-//  Function for adding two numbers
+// Addition
 double addOp(double a, double b) {
     return a + b;
 }
 
-//  Function for substracting two numbers
+// Sustraction
 double subsOp(double a, double b) {
     return a - b;
 }
 
-//  Function for multiplicating two numbers
+// Multiplication
 double multiOp(double a, double b) {
     return a * b;
 }
 
-//  Function for dividing two numbers with division by zero management
+// Division
 double divOp(double a, double b) {
     if (b == 0) {
         cout << "Error: Division by zero is forbidden." << endl;
-        return NAN; //  Just NotANumber
+        return NAN; // Not A Number
     }
-
     return a / b;
 }
 
-//  Main function
-int main ()
-{
-    //  Define variables
+// Verifies input validation
+double getValid(const string& prompt) {
+    double number;
+    while (true) {
+        cout << prompt;
+        if (cin >> number) {
+            return number;
+        } else {
+            cout << "Invalid input. Please enter a valid number." << endl;
+            cin.clear(); // Clean incorrect input
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Discards incorrect input
+        }
+    }
+}
+
+// Main function
+int main() {
+    // Main variables
     char operation;
     double number1, number2;
+    bool validOp = false;
 
-    //  Get user input
-    cout << "Enter first number: ";
-    while(!(cin >> number1)) {
-        //  Invalids if wrong input
-        cout << "Invalid. Please enter a correct input: ";
-        cin.clear();    //  Clear the input
-        cin.ignore(numeric_limits<streamsize>::max(), '/n');    //  Discard the invalid input
-    }
+    // Get first number
+    number1 = getValid("Enter first number: ");
 
-    cout << "Input the operation (+, -, *, /): ";
-    cin >> operation;
+    // Operation symbol verification
+    do {
+        cout << "Input the operation (+, -, *, /): ";
+        cin >> operation;
 
-    cout << "Input the second number: ";
-    while(!(cin >> number2)) {
-        //  Invalids if wrong input
-        cout << "Invalid. Please enter a correct input: ";
-        cin.clear();    //  Clear the input
-        cin.ignore(numeric_limits<streamsize>::max(), '/n');    //      Discard the invalid input
-    }
+        switch (operation) {
+            case '+':
+            case '-':
+            case '*':
+            case '/':
+                validOp = true;
+                break;
+            default:
+                cout << "Invalid operation. Please enter a correct operation (+, -, *, /): " << endl;
+        }
+    } while (!validOp);
 
-    //  If operation char is correct, proceed with Switch
+    // Get second number
+    number2 = getValid("Enter second number: ");
+
+    // Make op and show results
     switch (operation) {
         case '+':
             showResults(addOp(number1, number2));
@@ -74,8 +92,6 @@ int main ()
         case '/':
             showResults(divOp(number1, number2));
             break;
-        default:
-            cout << "Invalid operation. Please enter a correct operation (+, -, *, /): " << endl;
     }
 
     return 0;
