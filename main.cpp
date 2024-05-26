@@ -2,35 +2,14 @@
 #include <cmath>
 #include <limits>
 
+#include "calculon.h"
+#include "operations.cpp"
+
 using namespace std;
 
 // Result
 void showResults(double result) {
     cout << "The result is: " << result << endl;
-}
-
-// Addition
-double addOp(double a, double b) {
-    return a + b;
-}
-
-// Sustraction
-double subsOp(double a, double b) {
-    return a - b;
-}
-
-// Multiplication
-double multiOp(double a, double b) {
-    return a * b;
-}
-
-// Division
-double divOp(double a, double b) {
-    if (b == 0) {
-        cout << "Error: Division by zero is forbidden." << endl;
-        return NAN; // Not A Number
-    }
-    return a / b;
 }
 
 // Verifies input validation
