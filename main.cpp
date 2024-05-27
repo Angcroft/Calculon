@@ -30,47 +30,105 @@ double getValid(const string& prompt) {
 // Main function
 int main() {
     // Main variables
+    int opType;
     char operation;
     double number1, number2;
+    bool validOpType = false;
     bool validOp = false;
 
     // Get first number
     number1 = getValid("Enter first number: ");
 
-    // Operation symbol verification
+    //  Type of operation verification
     do {
-        cout << "Input the operation (+, -, *, /): ";
-        cin >> operation;
+        cout << "Input what kind of operation you want: ";
+        if (cin >> opType && (opType == 1 || opType == 2)) {
+            validOpType = true;
+        } else {
+            cout << "Invalid operation type. Please enter a correct operation type: " << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+    } while (!validOpType);
 
+        if (opType == 1) {
+            //  Basic operations
+            do {
+                cout << "Input the operation (+, -, *, /): ";
+                cin >> operation;
+
+                switch (operation) {
+                    case '+':
+                    case '-':
+                    case '*':
+                    case '/':
+                        validOp = true;
+                        break;
+                    default:
+                        cout << "Invalid operation. Please enter a correct operation (+, -, *, /): " << endl;
+                }
+            } while (!validOp);
+        } else if (opType == 2) {
+            //  Advanced operations
+            cout << "Input the operation ((^)p, (r)oots, (%)module, (!)factorial, l(10), n(natural), e): " << endl;
+            cin >> operation;
+
+            switch (operation) {
+                case 'p':
+                case 'r':
+                case '%':
+                case '!':
+                case 'l':
+                case 'n':
+                case 'e':
+                    validOp = true;
+                    break;
+                default:
+                    cout << "Invalid operation. Please enter a correct operation ((^)p, (r)oots, (%)module, (!)factorial, l(10), n(natural), e): " << endl;
+            }
+        } while (!validOp);
+
+    if (operation == '!') {
+        //  When it is Factorial
+        int intNumber1 = static_cast<int>(number1);
+        showResults(factOp(intNumber1));
+    } else if (operation == 'l') {
+        //  Logarithm in 10
+        showResults(logOp(number1));
+    } else if (operation == 'n') {
+        //  Natural Logarithm
+        showResults(logOp(number1));
+    } else if (operation == 'e') {
+        //  Exponential
+        showResults(exOp(number1));
+    } else {
+        // Get second number
+        number2 = getValid("Enter second number: ");
+
+        // Make op and show results
         switch (operation) {
             case '+':
-            case '-':
-            case '*':
-            case '/':
-                validOp = true;
+                showResults(addOp(number1, number2));
                 break;
-            default:
-                cout << "Invalid operation. Please enter a correct operation (+, -, *, /): " << endl;
+            case '-':
+                showResults(subsOp(number1, number2));
+                break;
+            case '*':
+                showResults(multiOp(number1, number2));
+                break;
+            case '/':
+                showResults(divOp(number1, number2));
+                break;
+            case 'p':
+                showResults(powOp(number1, number2));
+                break;
+            case 'r':
+                showResults(rootOp(number1, number2));
+                break;
+            case '%':
+                showResults(modOp(number1, number2));
+                break;
         }
-    } while (!validOp);
-
-    // Get second number
-    number2 = getValid("Enter second number: ");
-
-    // Make op and show results
-    switch (operation) {
-        case '+':
-            showResults(addOp(number1, number2));
-            break;
-        case '-':
-            showResults(subsOp(number1, number2));
-            break;
-        case '*':
-            showResults(multiOp(number1, number2));
-            break;
-        case '/':
-            showResults(divOp(number1, number2));
-            break;
     }
 
     return 0;
