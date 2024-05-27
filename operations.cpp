@@ -73,6 +73,7 @@ unsigned long long factOp(int n) {
     return result;
 }
 
+//  Logarithm by 10
 double logOp(double a) {
     if (a <= 0) {
         cout << "Error: logarithm of non-positive numbers is undefined." << endl;
@@ -81,6 +82,7 @@ double logOp(double a) {
     return log10(a);
 }
 
+//  Natural logarithm
 double lnOp(double a) {
     if (a <= 0) {
         cout << "Error: Logarithm of non-positive numbers is undefined." << endl;
@@ -89,6 +91,45 @@ double lnOp(double a) {
     return log(a);
 }
 
+//  Exponential
 double exOp(double a) {
     return exp(a);
+}
+
+//  Sine
+double sinOp(double a) {
+    return sin(a);
+}
+
+//  Cosine
+double cosOp(double a) {
+    return cos(a);
+}
+
+//  Tangent
+double tanOp(double a) {
+    return tan(a);
+}
+
+//  Inverse sine
+double asinOp(double a) {
+    if (a < -1 || a > 1) {
+        cout << "Error: input out of range for asin. Valid range is [-1, 1]" << endl;
+        return NAN; //  NotANumber
+    }
+    return asin(a);
+}
+
+//  Inverse cosine
+double acosOp(double a) {
+    if (a < -1 || a > 1) {
+        cout << "Error: Input out of range for acos. Valid range is [-1, 1]." << endl;
+        return NAN; //  NotANumber
+    }
+    return acos(a);
+}
+
+//  Inverse Tangent
+double atanOp(double a) {
+    return atan(a);
 }

@@ -86,7 +86,43 @@ int main() {
                 default:
                     cout << "Invalid operation. Please enter a correct operation ((^)p, (r)oots, (%)module, (!)factorial, l(10), n(natural), e): " << endl;
             }
-        } while (!validOp);
+        } else if (opType == 3) {
+            //  Trigonometric operation
+            do {
+                cout << "Input the operation ((s)ine, (c)osine, (t)an)";
+                cin >> operation;
+
+                switch (operation) {
+                    case 's':
+                    case 'c':
+                    case 't':
+                        validOp = true;
+                        break;
+                    default:
+                        cout << "Invalid operation. Please enter a correct trigonometric operation ((s)ine, (c)osine, (t)an): " << endl;
+                        cin.clear();
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                }
+            } while (!validOp);
+        } else if (opType == 4) {
+            //  Inverse trigonometric operation
+            do {
+                cout << "Input the operation ((a)sin, (b)acos, (c)atan): ";
+                cin >> operation;
+
+                switch (operation) {
+                    case 'a':
+                    case 'b':
+                    case 'c':
+                        validOp = true;
+                        break;
+                    default:
+                    cout << "Invalid operation. Please enter a correct inverse trigonometric operation ((a)sin, (b)acos, (c)atan): " << endl;
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                }
+            } while (!validOp);
+        }
 
     if (operation == '!') {
         //  When it is Factorial
@@ -101,6 +137,15 @@ int main() {
     } else if (operation == 'e') {
         //  Exponential
         showResults(exOp(number1));
+    } else if (operation == 's') {
+        //  Sine
+        showResults(sinOp(number1));
+    } else if (operation == 'c') {
+        //  Cosine
+        showResults(cosOp(number1));
+    } else if (operation == 't') {
+        //  Tangent
+        showResults(tanOp(number1));
     } else {
         // Get second number
         number2 = getValid("Enter second number: ");
