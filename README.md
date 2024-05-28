@@ -14,33 +14,89 @@ The project consists of the main.cpp file, which contains almost all the logic a
 and finally calculon.h, which declares the functions and constants of the project (For the newbies, the .h file is necessary for projects when you make another one linked to main).
 
 ## Instructions
-Once you clone the repository and get the code locally, you have to enter the following command for the C++ compiler: "g++ -o calculon main.cpp operations.cpp". Once done you have to execute the program,
-with "./calculon"
+Once you clone the repository a download the code locally, enter with the following prompt to compile it: "g++ -o calculon main.cpp operations.cpp. Once done run the program with "./calculon".
 
 ## How it works
-When the program is executing, the first thing that will appear to you are the main options depending on the type of operation you want to perform, selected by the numeric characters.
-1. Is for Basic Operations
-2. Is for Advanced Operations
-3. Is for trigonometric functions
-4. Is for inverse trigonometric functions (arc)
+When the program is executed, you will see the main options depending on the type of operation you want to perform, selected by numeric characters.
+1. **Basic Operations** and choose from the following operations:
+* addition ('+')
+* substraction ('-')
+* multiplication ('*')
+* division ('/')
+
+2. **Advanced Operations** and choose from the following operations:
+* power ('p')
+* root ('r')
+* module ('%')
+* factorial ('!')
+* logarithm base 10 ('l')
+* natural logarithm ('n')
+* exponential ('e')
+
+3. **Trigonometric Functions** and choose from the following operations:
+* sine ('s')
+* cosine ('c')
+* tangent ('t')
+
+4. **Inverse Trigonometric Functions** and choose from the following operations:
+* arcsine ('a')
+* arccosine ('A')
+* arctangent ('T')
+
+5. **Exit** to just leave the program.
 
 ### Example:
-> select operation type:
-> 1. Basic operations (+, -, *, /)
-> 2. Advanced operations (power, roots, %, factorial, log, ln, exp)
-> 3. Trigonometric operations (sin, cos, tan, asin, acos, atan)
-> 4. Exit
-(Imagine you select '1' as an example).
-> Enter first number: 10
-> select a basic operation:
-> + : addition
-> - : substraction
-> * : multiplication
-> / : division
-(Imagine you select '+' as an example).
-> Enter second number: 5
-> The result is: 15
+Example for basic operations:
+Select operation type:
+1. Basic operations (+, -, *, /)
+2. Advanced operations (power, roots, %, factorial, log, ln, exp)
+3. Trigonometric operations (sin, cos, tan, asin, acos, atan)
+4. Exit
+1
+Enter first number: 10
+Select a basic operation:
++ : Addition
+- : Subtraction
+* : Multiplication
+/ : Division
++
+Enter second number: 5
+The result is: 15
+
+Example for advanced operations:
+Select operation type:
+1. Basic operations (+, -, *, /)
+2. Advanced operations (power, roots, %, factorial, log, ln, exp)
+3. Trigonometric operations (sin, cos, tan, asin, acos, atan)
+4. Exit
+2
+Enter the number: 5
+Select an advanced operation:
+p : Power
+r : Roots
+% : Modulo
+! : Factorial
+l : Log base 10
+n : Natural log
+e : Exponential
+!
+The result is: 120
+
+Example for trigonometric functions:
+Select operation type:
+1. Basic operations (+, -, *, /)
+2. Advanced operations (power, roots, %, factorial, log, ln, exp)
+3. Trigonometric operations (sin, cos, tan, asin, acos, atan)
+4. Exit
+3
+Enter the angle/value: 1
+Select a trigonometric operation:
+s : Sine
+c : Cosine
+t : Tangent
+s
+The result is: 0.841471
 
 ## About the use of this project
-This project isn't intended for contributing, but you are completely free to take the code I made in here for your own projects.
-Following the MIT License that I hereby grant to everybody who could benefit from the use of this code.
+This project isn't intended for contributions, but you are completely free to use the code for your own projects. Following the MIT License,
+I hereby grant everyone who could benefit from the use of this code the freedom to do so.
