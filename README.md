@@ -1,18 +1,17 @@
 # CALCULON: CLI calculator written in C++
 
-This calculator was made with the purpose of learning about C++, and made public for the people who is also interested in this programming language and wants to get some of the syntax of the code.
-Calculon is mostly like the typical basic task when one is learning about programming, so it is suitable for beginners. This calculator offers a variety of mathematic operations, from basic, to trigonometric functions.
-The offered operations and functions in here are as follows:
-* Basic Operations: addition, substraction, multiplication, division.
-* Advanced Operations: Exponents, roots, module, factorial, logarithm with a base in 10, natural logarithm, exponential.
-* Trigonometric operations: sine, cosine, tangent, arcsine, arccosine, arctangente.
+## Introduction
+This calculator was made with the purpose of learning about C++, and is made public for people who is also interested in this programming language and wants to understand some of the syntax. Calculon is similar to the typical basic task when one is learning about programming, so it is suitable for beginners. This calculator offers a variety of mathematic operations, from basic, to trigonometric functions. The offered operations and functions in here are as follows:
+* **Basic Operations**: addition, substraction, multiplication, division.
+* **Advanced Operations**: Exponents, roots, module, factorial, logarithm with a base in 10, natural logarithm, exponential.
+* **Trigonometric functions**: sine, cosine, tangent, arcsine, arccosine, arctangente.
 
 ## Requisites
-Obviously you'll need a C++ compiler and a development environment for running the code, like **g++** or **clang++** (I prefer the g++).
+You'll need a C++ compiler and a development environment to run the code, such as **g++** or **clang++** (I used g++ in this case).
 
 ## Structure of project
-The project consists of the main.cpp file, which contains almost all the logic and cli menus. The operations.cpp implements the mathematic functions,
-and finally calculon.h, which worked as a way to declare the function and constants of the project (For the newbies, the .h is necessary for projects when you make another linked file to main).
+The project consists of the main.cpp file, which contains almost all the logic and CLI menus. The operations.cpp implements the mathematic functions,
+and finally calculon.h, which declares the functions and constants of the project (For the newbies, the .h file is necessary for projects when you make another one linked to main).
 
 ## Instructions
 Once you clone the repository and get the code locally, you have to enter the following command for the C++ compiler: "g++ -o calculon main.cpp operations.cpp". Once done you have to execute the program,
